@@ -1,6 +1,9 @@
 env:
   node: true
-  es6:  false
+  es6:  true
+
+parserOptions:
+  sourceType: "module"
 
 ignorePatterns:
   - coverage/
@@ -35,7 +38,7 @@ rules:
 
   # key-spacing:            [ 2, { "align": "value" } ]
   keyword-spacing:        2
-  linebreak-style:        2
+  #linebreak-style:        2
   max-depth:              [ 1, 6 ]
   max-nested-callbacks:   [ 1, 4 ]
   # string can exceed 80 chars, but should not overflow github website :)

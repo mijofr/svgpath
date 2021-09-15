@@ -2,6 +2,7 @@
   "name": "svgpath",
   "version": "2.3.1",
   "description": "Low level toolkit for SVG paths transformations.",
+  "sourceType": "module",
   "keywords": [
     "svg",
     "path",
