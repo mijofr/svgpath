@@ -1,15 +1,11 @@
-'use strict';
-
-
 var assert = require('assert');
-var matrix = require('../lib/matrix');
-
+import { Matrix } from './../lib/matrix';
 var m;
 
 describe('Matrix', function () {
 
   it('ignore empty actions', function () {
-    m = matrix();
+    m = new Matrix();
 
     m.matrix([ 1, 0, 0, 1, 0, 0 ]);
     assert.strictEqual(m.queue.length, 0);
@@ -31,12 +27,12 @@ describe('Matrix', function () {
   });
 
   it('do nothing on empty queue', function () {
-    assert.deepEqual(matrix().calc(10, 11, false), [ 10, 11 ]);
-    assert.deepEqual(matrix().toArray(), [ 1, 0, 0, 1, 0, 0 ]);
+    assert.deepEqual(new Matrix().calc(10, 11, false), [ 10, 11 ]);
+    assert.deepEqual(new Matrix().toArray(), [ 1, 0, 0, 1, 0, 0 ]);
   });
 
   it('compose', function () {
-    m = matrix()
+    m = new Matrix()
       .translate(10, 10)
       .translate(-10, -10)
       .rotate(180, 10, 10)
@@ -53,7 +49,7 @@ describe('Matrix', function () {
   });
 
   it('cache', function () {
-    m = matrix()
+    m = new Matrix()
       .translate(10, 20)
       .scale(2, 3);
 

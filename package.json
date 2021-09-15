@@ -1,6 +1,6 @@
 {
-  "name": "svgpath",
-  "version": "2.3.1",
+  "name": "@mijofr/svgpath",
+  "version": "3.0.0",
   "description": "Low level toolkit for SVG paths transformations.",
   "sourceType": "module",
   "keywords": [
@@ -13,10 +13,10 @@
     "matrix"
   ],
   "license": "MIT",
-  "repository": "fontello/svgpath",
+  "repository": "mijofr/svgpath",
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint && nyc mocha",
+    "test": "npm run lint && nyc mocha --require esm",
     "covreport": "nyc report --reporter html && nyc report --reporter lcov"
   },
   "files": [
@@ -24,10 +24,14 @@
     "index.d.ts",
     "lib/"
   ],
+  "esm": {
+    "cjs": true
+  },
   "devDependencies": {
     "ansi": "^0.3.1",
     "benchmark": "^2.1.1",
     "eslint": "^7.1.0",
+    "esm": "^3.2.25",
     "mocha": "^8.0.1",
     "nyc": "^15.0.1"
   }
